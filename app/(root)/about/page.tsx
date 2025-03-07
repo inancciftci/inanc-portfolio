@@ -69,22 +69,27 @@ const page = () => {
     <div className="pt-[6rem]">
       <div className="container flex flex-col gap-20">
         <div className="flex flex-col items-center gap-4">
-          <div className="border-[1px] rounded-full overflow-hidden">
+          <div className="border-[1px] p-2 rounded-full overflow-hidden">
             <UserIcon className="w-[30px] h-[30px]" />
           </div>
-
-          <h1 className="text-5xl font-bold text-slate-300">About me</h1>
-          <div className="flex w-[25%] mt-[-0.9rem]">
-            <div className="w-[30%] bg-[#4c9474] h-[5px]"></div>
-            <div className="w-[70%] bg-[#60d4a4] h-[5px]"></div>
+          <h1 className="text-5xl font-bold text-slate-300">
+            About <span className="text-[#60d4a4]">Me</span>
+          </h1>
+          <div className="flex mt-[-0.5rem] rounded-md overflow-hidden">
+            <div className="w-[140px] bg-[#60d4a4] h-[5px]"></div>
+            <div className="w-[70px] bg-white h-[5px]"></div>
           </div>
         </div>
-        <div className="grid grid-cols-[450px_1fr] gap-10">
-          <div className="flex justify-center items-center">
+        <div className="grid grid-cols-[450px_1fr] max-md:grid-cols-1 gap-10">
+          <div className="flex justify-center items-center max-md:mb-20">
             <AboutImage />
           </div>
           <div className="flex flex-col gap-6 ">
             <h2 className="text-4xl font-bold">Inanc Ciftci</h2>
+            <div className="flex items-center gap-2 font-bold">
+              <p className="w-[5px] h-[5px] rounded-full bg-[#60d4a4] animate-[ping_1s_ease-in-out_infinite]"></p>
+              #OpenToWork
+            </div>
             <p className="text-slate-400">
               I was born in 1997 in Konya, Turkiye. I graduated with a law
               degree but realized my true passion is software development. To
