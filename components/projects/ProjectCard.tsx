@@ -43,7 +43,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               className=" cursor-crosshair flex items-center gap-1 text-slate-400 text-sm underline underline-offset-1"
               href={project.demo}
             >
-              <LinkIcon className=" w-[15px] h-[15px]" /> Open Live Site
+              <LinkIcon className=" w-[15px] h-[15px]" /> Open Live Demo
             </Link>
             <Link
               className=" cursor-crosshair flex items-center gap-1 text-slate-400 text-sm underline underline-offset-1"
