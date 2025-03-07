@@ -6,6 +6,7 @@ import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
 
 const rethinkSans = Rethink_Sans({
   variable: "--font-rethink-sans",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {

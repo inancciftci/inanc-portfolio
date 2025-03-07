@@ -6,7 +6,6 @@ import {
 } from "@radix-ui/react-hover-card";
 import { UserIcon } from "lucide-react";
 import { Metadata } from "next";
-import Image from "next/image";
 import React from "react";
 
 export const metadata: Metadata = {
