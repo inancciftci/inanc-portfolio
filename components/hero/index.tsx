@@ -11,7 +11,7 @@ const Hero = () => {
             <p className="w-[5px] h-[5px] rounded-full bg-[#60d4a4] animate-[ping_1s_ease-in-out_infinite]"></p>
             Izmir, Turkiye
           </div>
-          <div className="flex gap-2 items-center bg-gradient-to-r from-[#60d4a4]/20 to-black/10 rounded-r-3xl w-[60%] p-4">
+          <div className="flex gap-2 items-center bg-gradient-to-r from-[#60d4a4]/30 to-black/10 rounded-r-3xl w-[60%] max-sm:w-[100%] p-4">
             <div className="text-[#4c9474] ml-1 text-2xl">|</div>
             <span className="font-bold">React/Next.js Developer</span>
           </div>
@@ -31,7 +31,7 @@ const Hero = () => {
           <i className="devicon-postgresql-plain text-white"></i>
           <i className="devicon-supabase-plain text-white"></i>
         </div>
-        <div className="hidden max-md:flex items-center gap-8 w-[600px] bg-[#4c9474] shadow-[#60d4a4] rounded-l-full py-4 px-10 text-4xl absolute right-[-6rem] top-[10rem] max-sm:text-2xl max-sm:right-[-11rem]">
+        <div className="hidden max-md:flex items-center gap-8 w-[600px] bg-[#4c9474] shadow-[#60d4a4] rounded-l-full py-4 px-10 text-4xl absolute right-[-6rem] top-[10rem] max-sm:top-[50rem] max-sm:text-2xl max-sm:right-[-11rem]">
           <i className="devicon-nextjs-plain text-white"></i>
           <i className="devicon-html5-plain text-white"></i>
           <i className="devicon-java-plain text-white"></i>

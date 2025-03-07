@@ -66,7 +66,7 @@ const techStack = [
 
 const page = () => {
   return (
-    <div className="pt-[6rem]">
+    <div className="pt-[6rem] min-h-[110vh]">
       <div className="container flex flex-col gap-20">
         <div className="flex flex-col items-center gap-4">
           <div className="border-[1px] p-2 rounded-full overflow-hidden">
@@ -80,11 +80,11 @@ const page = () => {
             <div className="w-[70px] bg-white h-[5px]"></div>
           </div>
         </div>
-        <div className="grid grid-cols-[450px_1fr] max-md:grid-cols-1 gap-10">
+        <div className="grid grid-cols-[40%_1fr] max-sm:grid-cols-1 gap-10">
           <div className="flex justify-center items-center max-md:mb-20">
             <AboutImage />
           </div>
-          <div className="flex flex-col gap-6 ">
+          <div className="flex flex-col gap-6">
             <h2 className="text-4xl font-bold">Inanc Ciftci</h2>
             <div className="flex items-center gap-2 font-bold">
               <p className="w-[5px] h-[5px] rounded-full bg-[#60d4a4] animate-[ping_1s_ease-in-out_infinite]"></p>
