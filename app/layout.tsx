@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Rethink_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navigation/navbar";
 import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
+import Navbar from "@/components/navigation/navbar";
 
 const rethinkSans = Rethink_Sans({
   variable: "--font-rethink-sans",
