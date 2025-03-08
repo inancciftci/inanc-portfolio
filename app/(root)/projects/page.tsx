@@ -60,6 +60,17 @@ const projects = [
     link: "/project/flow-blog",
   },
   {
+    id: 6,
+    title: "Multistep Form",
+    description:
+      "A desktop only multistep form with a progress bar, built with Next.js, React Hook Form, Zod and Tailwind CSS. The form features dynamic validation and error handling.",
+    techStack: ["devicon-nextjs-plain", "devicon-tailwindcss-original"],
+    github: "https://github.com/inancciftci/multistep-form",
+    demo: "https://multistep-form-dusky.vercel.app/",
+    image: "/multistep-form.png",
+    link: "/project/flow-blog",
+  },
+  {
     id: 5,
     title: "Pizza Store",
     description:
