@@ -9,6 +9,23 @@ export const metadata: Metadata = {
 
 const projects = [
   {
+    id: 10,
+    title: "Save More - Personal Finance Tracker",
+    description:
+      "SaveMore is a personal finance tracker app built with Next.js, Supabase, Tailwind CSS, and ShadcnUI. It allows users to manage budgets, track income and expenses, and visualize their financial habits. With features like real-time data sync, secure authentication, and an intuitive dashboard, SaveMore helps users make informed financial decisions and stay on top of their goals.",
+    techStack: [
+      "devicon-nextjs-plain",
+      "devicon-react-original",
+      "devicon-typescript-plain",
+      "devicon-tailwindcss-original",
+    ],
+    github: "https://github.com/inancciftci/savemore",
+    demo: "https://savemore.vercel.app/",
+    image: "/project-6.png",
+    hasLink: true,
+    link: "/project/save-more",
+  },
+  {
     id: 0,
     title: "Flow Blog",
     description:
