@@ -10,7 +10,7 @@ const links = [
 
 const Navbar = () => {
   return (
-    <nav className="flex items-center bg-[rgba(0,0,0,0.5)] space-x-6 px-6 py-4 rounded-lg">
+    <nav className="flex items-center bg-slate-500/50 gap-4 px-3 py-2 text-sm rounded-[30px]">
       {links.map((link) => (
         <TransitionLink
           customClass={`text-primary-100`}

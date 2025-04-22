@@ -1,59 +1,302 @@
-import Image from "next/image";
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
+import CloudSeparator from "./CloudSeparator";
+import { Copy } from "lucide-react";
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [copied, setCopied] = useState<boolean>(false);
+  const textControls = useAnimation();
+  const { scrollY } = useScroll();
+  const moonRotation = useTransform(scrollY, [0, 500], [0, 180]);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const moveX = clientX / window.innerWidth - 0.5;
+      const moveY = clientY / window.innerHeight - 0.5;
+
+      setMousePosition({
+        x: moveX * 15,
+        y: moveY * 15,
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    textControls.start({
+      x: mousePosition.x,
+      y: mousePosition.y,
+      transition: { type: "spring", stiffness: 75, damping: 30, mass: 0.5 },
+    });
+  }, [mousePosition, textControls]);
+
+  const copyClipboard = () => {
+    navigator.clipboard.writeText("ciftcinanc@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <div className="relative overflow-hidden max-w-[100vw]">
-      <div className="container grid grid-cols-[60%_1fr] max-md:flex max-md:flex-col max-md:gap-10 items-center justify-center min-h-[100vh]">
-        <div className="flex flex-col gap-4">
-          <h1 className="z-[4] text-8xl font-bold">I&apos;m Inanc</h1>
-          <div className="flex items-center gap-2">
-            <p className="w-[5px] h-[5px] rounded-full bg-[#60d4a4] animate-[ping_1s_ease-in-out_infinite]"></p>
-            Izmir, Turkiye
-          </div>
-          <div className="flex gap-2 items-center bg-gradient-to-r from-[#60d4a4]/30 to-black/10 rounded-r-3xl w-[60%] max-sm:w-[100%] p-4">
-            <div className="text-[#4c9474] ml-1 text-2xl">|</div>
-            <span className="font-bold">React/Next.js Developer</span>
-          </div>
-          <p className="text-md">
-            I graduated with a law degree but found my passion in software
-            development. I completed Workintech’s 6-month Full-Stack Program,
-            gaining hands-on experience through 72 projects. I&apos;m excited to
-            build a tech career and take on new challenges.
-          </p>
-        </div>
-        <div className="bg-[#4c9474] shadow-[#60d4a4] shadow-2xl rotate-45 z-[2] text-5xl right-[3rem] top-[-24rem] absolute h-[1000px] p-8 rounded-b-full flex flex-col justify-end gap-10 max-md:hidden">
-          <i className="devicon-html5-plain text-white"></i>
-          <i className="devicon-css3-plain text-white"></i>
-          <i className="devicon-nextjs-plain text-white"></i>
-          <i className="devicon-react-original text-white"></i>
-          <i className="devicon-java-plain text-white"></i>
-          <i className="devicon-postgresql-plain text-white"></i>
-          <i className="devicon-supabase-plain text-white"></i>
-        </div>
-        <div className="hidden max-md:flex items-center gap-8 w-[600px] bg-[#4c9474] shadow-[#60d4a4] rounded-l-full py-4 px-10 text-4xl absolute right-[-6rem] top-[10rem] max-sm:top-[50rem] max-sm:text-2xl max-sm:right-[-11rem]">
-          <i className="devicon-nextjs-plain text-white"></i>
-          <i className="devicon-html5-plain text-white"></i>
-          <i className="devicon-java-plain text-white"></i>
-          <i className="devicon-postgresql-plain text-white"></i>
-          <i className="devicon-supabase-plain text-white"></i>
-          <i className="devicon-css3-plain text-white"></i>
-          <i className="devicon-react-original text-white"></i>
-        </div>
+    <div className="min-h-[100vh] flex flex-col justify-center items-center relative">
+      <div className="flex flex-col gap-10 container items-center fixed z-[3] top-[50%] translate-y-[-50%]">
+        <h1 className="text-5xl font-bold relative">
+          Hi! I&apos;m Inanc. A Web Developer.
+          <span className="absolute top-[-1rem] font-thin left-0 text-sm">
+            <span className="flex gap-2 items-center text-slate-300">
+              <span className="animate-pulse w-[7px] h-[7px] rounded-full bg-[#3B82F6]"></span>
+              Izmir, Turkiye
+            </span>
+          </span>
+          <span className="absolute bottom-[-1rem] font-thin left-37 text-sm text-slate-300">
+            <span
+              className="flex gap-2 items-center cursor-pointer"
+              onClick={copyClipboard}
+            >
+              <Copy className="text-white" size={15} />
+              <span id="myEmail">
+                {copied ? "Copied!" : "ciftcinanc@gmail.com"}
+              </span>
+            </span>
+          </span>
+        </h1>
+        {/* <div className="flex flex-col justify-center gap-4 items-center text-sm">
+           <button className="bg-[#3B82F6]/50 px-6 py-2 cursor-pointer rounded-lg font-[400] uppercase flex items-center gap-2 outline-4 outline-[#3B82F6]">
+            <MoveRight size={15} /> View Projects
+          </button>
+        </div> */}
+        <motion.div animate={textControls}>
+          <h3 className="text-lg mt-10 font-[300] text-white w-[800px] text-center">
+            I craft fast, responsive, and visually striking web apps using{" "}
+            <span className="text-white pacifico-font font-bold italic">
+              React
+            </span>
+            ,
+            <span className="text-white pacifico-font font-bold italic">
+              Next.js
+            </span>
+            ,{" "}
+            <span className="text-white pacifico-font font-bold italic">
+              Tailwind CSS
+            </span>{" "}
+            — and bring them to life with{" "}
+            <motion.span
+              animate={{
+                y: [0, -4, 0], // bounce up and back
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+              className="inline-block text-white pacifico-font font-bold italic"
+            >
+              Framer Motion.
+            </motion.span>{" "}
+            I handle the backend too, using Node.js, MongoDB, and services like
+            Supabase to deliver full-stack magic.
+          </h3>
+        </motion.div>
       </div>
-      <div className="max-md:hidden absolute z-[-2] w-[3px] bg-[#60d4a4] shadow-[#60d4a4] shadow-[0_5px_15px_5px] h-[80vh] rotate-[180deg] bottom-[100px] right-[81px]"></div>
-      <div className="max-md:hidden absolute z-[1] w-[3px] bg-[#60d4a4] shadow-[#60d4a4] shadow-[0_5px_15px_5px] h-[80vh] rotate-[180deg] bottom-[114px] right-[68px]">
-        <div className="w-[5px] h-[5px] fixed top-[-2px] left-[-1.1px] bg-[#60d4a4] rounded-full shadow-[#60d4a4] shadow-[0_5px_15px_5px]"></div>
-      </div>
-      <div className="max-md:hidden fixed bottom-0 right-0 w-[150px] h-[150px]">
-        <Image
-          className="absolute rotate-y-180"
-          src={"/cat.png"}
-          width={150}
-          height={150}
-          alt="cat laser eyes"
+      <motion.div className="absolute bottom-0 w-[1200px] h-[130px] overflow-hidden z-[4]">
+        <motion.img
+          style={{ rotate: moonRotation }}
+          src={"/moon.png"}
+          alt="moon background"
+          className="object-cover object-bottom rotate-180"
         />
+      </motion.div>
+      <motion.div
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.3,
+        }}
+        animate={{
+          translateY: [0, -950],
+          translateX: [0, 30, -20, 40, -7],
+          rotate: [0, 45, 90, 135, 180],
+        }}
+        className="absolute bottom-0 left-[55%]"
+      >
+        <i className="devicon-nextjs-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.6,
+        }}
+        animate={{
+          translateY: [0, -920],
+          translateX: [10, -30, 20, -25, 5],
+          rotate: [0, 60, 120, 180, 240],
+        }}
+        className="absolute bottom-0 left-[40%]"
+      >
+        <i className="devicon-react-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 11,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.4,
+        }}
+        animate={{
+          translateY: [0, -960],
+          translateX: [-10, 25, -15, 30, 0],
+          rotate: [0, 30, 120, 210, 300],
+        }}
+        className="absolute bottom-0 left-[45%]"
+      >
+        <i className="devicon-tailwindcss-original text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 13,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.1,
+        }}
+        animate={{
+          translateY: [0, -940],
+          translateX: [5, -20, 35, -15, 10],
+          rotate: [0, 90, 180, 270, 360],
+        }}
+        className="absolute bottom-0 left-[50%]"
+      >
+        <i className="devicon-typescript-original text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.5,
+        }}
+        animate={{
+          translateY: [0, -930],
+          translateX: [-10, 10, -25, 15, 5],
+          rotate: [0, 30, 60, 90, 120],
+        }}
+        className="absolute bottom-0 left-[35%]"
+      >
+        <i className="devicon-nodejs-plain-wordmark text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.2,
+        }}
+        animate={{
+          translateY: [0, -960],
+          translateX: [20, -20, 25, -10, 5],
+          rotate: [0, 60, 180, 300, 360],
+        }}
+        className="absolute bottom-0 left-[38%]"
+      >
+        <i className="devicon-mongodb-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 11.5,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.7,
+        }}
+        animate={{
+          translateY: [0, -910],
+          translateX: [-15, 20, -10, 5, 10],
+          rotate: [0, 45, 135, 225, 315],
+        }}
+        className="absolute bottom-0 left-[42%]"
+      >
+        <i className="devicon-supabase-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 10.5,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.8,
+        }}
+        animate={{
+          translateY: [0, -970],
+          translateX: [15, -5, 25, -20, 10],
+          rotate: [0, 70, 140, 210, 280],
+        }}
+        className="absolute bottom-0 left-[48%]"
+      >
+        <i className="devicon-framermotion-original text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 9.5,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 0.25,
+        }}
+        animate={{
+          translateY: [0, -955],
+          translateX: [0, 20, -30, 15, -5],
+          rotate: [0, 45, 90, 180, 360],
+        }}
+        className="absolute bottom-0 left-[52%]"
+      >
+        <i className="devicon-firebase-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <motion.div
+        transition={{
+          duration: 9.5,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut",
+          delay: 1.25,
+        }}
+        animate={{
+          translateY: [0, -955],
+          translateX: [0, 20, -30, 15, -5],
+          rotate: [0, 45, 90, 180, 360],
+        }}
+        className="absolute bottom-0 left-[52%]"
+      >
+        <i className="devicon-javascript-plain text-5xl opacity-[0.5]"></i>
+      </motion.div>
+
+      <div className="absolute overflow-hidden w-full bottom-0 left-0 min-h-[300px] max-h-[300px] ">
+        <div className="absolute bottom-[-1110px] left-[50%] translate-x-[-50%] w-[1200px] rounded-full aspect-square moon-shadow"></div>
       </div>
+      <CloudSeparator />
     </div>
   );
 };
