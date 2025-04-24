@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Pacifico } from "next/font/google";
 import "./globals.css";
 import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
-import Navbar from "@/components/navigation/navbar";
+// import Navbar from "@/components/navigation/navbar";
 import SmoothScroller from "@/components/ui/smoothscroller";
 
 // const rethinkSans = Rethink_Sans({
@@ -49,10 +49,13 @@ export default function RootLayout({
           className={`${outfit.className} ${pacifico.variable} relative antialiased`}
         >
           <AnimatedScrollbar />
-          <div className="fixed z-[1000] top-[1rem] left-[50%] translate-x-[-50%]">
+          {/* <div className="fixed z-[1000] top-[1rem] left-[50%] translate-x-[-50%]">
             <Navbar />
-          </div>
+          </div> */}
           <main>{children}</main>
+          <div className="w-[150px] h-[300px] iphone-mockup bg-green-500">
+            DNEME
+          </div>
         </body>
       </SmoothScroller>
     </html>

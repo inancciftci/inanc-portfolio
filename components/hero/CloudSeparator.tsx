@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const CloudSeparator = () => {
   return (
-    <div className="w-full z-10 absolute bottom-2 left-[50%] translate-x-[-50%] container">
+    <div className="w-full absolute z-10 bottom-2 left-[50%] translate-x-[-50%] container">
       <motion.div
         transition={{
           duration: 10,

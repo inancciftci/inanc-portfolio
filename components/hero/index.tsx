@@ -9,7 +9,7 @@ const Hero = () => {
   const [copied, setCopied] = useState<boolean>(false);
   const textControls = useAnimation();
   const { scrollY } = useScroll();
-  const moonRotation = useTransform(scrollY, [0, 500], [0, 180]);
+  const moonRotation = useTransform(scrollY, [0, 500], [0, 270]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -50,7 +50,7 @@ const Hero = () => {
           Hi! I&apos;m Inanc. A Web Developer.
           <span className="absolute top-[-1rem] font-thin left-0 text-sm">
             <span className="flex gap-2 items-center text-slate-300">
-              <span className="animate-pulse w-[7px] h-[7px] rounded-full bg-[#3B82F6]"></span>
+              <span className="animate-pulse w-[7px] h-[7px] rounded-full bg-green-400"></span>
               Izmir, Turkiye
             </span>
           </span>
@@ -74,18 +74,10 @@ const Hero = () => {
         <motion.div animate={textControls}>
           <h3 className="text-lg mt-10 font-[300] text-white w-[800px] text-center">
             I craft fast, responsive, and visually striking web apps using{" "}
-            <span className="text-white pacifico-font font-bold italic">
-              React
-            </span>
-            ,
-            <span className="text-white pacifico-font font-bold italic">
-              Next.js
-            </span>
-            ,{" "}
-            <span className="text-white pacifico-font font-bold italic">
-              Tailwind CSS
-            </span>{" "}
-            — and bring them to life with{" "}
+            <span className="font-bold text-green-400">React</span>,
+            <span className="font-bold text-green-400">Next.js</span>,{" "}
+            <span className="font-bold text-green-400">Tailwind CSS</span> — and
+            bring them to life with{" "}
             <motion.span
               animate={{
                 y: [0, -4, 0], // bounce up and back
@@ -96,12 +88,16 @@ const Hero = () => {
                 repeatType: "loop",
                 ease: "easeInOut",
               }}
-              className="inline-block text-white pacifico-font font-bold italic"
+              className="inline-block font-bold text-green-400"
             >
               Framer Motion.
             </motion.span>{" "}
-            I handle the backend too, using Node.js, MongoDB, and services like
-            Supabase to deliver full-stack magic.
+            I handle the backend too, using{" "}
+            <span className="font-bold text-green-400">Node.js</span>,{" "}
+            <span className="font-bold text-green-400">MongoDB</span>, and
+            services like{" "}
+            <span className="font-bold text-green-400">Supabase</span> to
+            deliver full-stack magic.
           </h3>
         </motion.div>
       </div>
