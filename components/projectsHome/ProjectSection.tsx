@@ -70,7 +70,7 @@ const ProjectSection = () => {
   return (
     <div className="bg-black min-h-[500px] relative z-8">
       <ProjectsSeperator />
-      <div className="container mt-50">
+      <div className="container mt-10">
         <div className="flex flex-col gap-30">
           <ProjectCard project={projects[0]} />
           <ProjectCard project={projects[1]} />

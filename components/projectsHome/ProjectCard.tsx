@@ -3,8 +3,6 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { Earth, Github } from "lucide-react";
-import Marquee from "react-fast-marquee";
-import { motion } from "framer-motion";
 
 interface ProjectProps {
   id: number;
@@ -37,8 +35,22 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               fill
             />
           </div>
-
-          <div className="h-[260px] w-[430px]  relative">
+          <div className="absolute right-[1rem] top-26 z-5">
+            <Image
+              src={"/_iphone.png"}
+              height={300}
+              width={100}
+              alt="iPhone mockup"
+            />
+          </div>
+          <Image
+            src={project.image}
+            width={250}
+            height={500}
+            className="object-cover object-top absolute right-0 z-1 bottom-0"
+            alt="deneme"
+          />
+          <div className="h-[260px] w-[430px] relative">
             <Image src={"/mockup.png"} alt={project.title} fill />
           </div>
         </div>
@@ -66,7 +78,7 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               </Link>
               <Link
                 className="bg-green-600 p-1 rounded-full"
-                href={project.link}
+                href={project.demo}
                 target="_blank"
               >
                 <Earth className="font-bold text-lg" size={15} />
@@ -87,9 +99,12 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
         </div>
 
         {/* Call to Action */}
-        <button className="hover:shadow-white hover:text-white hover:font-bold hover:bg-green-600 transition-all duration-600 bg-white w-[200px] shadow-[5px_5px_0px_0px] shadow-green-600 text-black uppercase cursor-pointer py-2">
+        <Link
+          href={project.link}
+          className="hover:shadow-white text-center hover:text-white hover:font-bold hover:bg-green-600 transition-all duration-600 bg-white w-[200px] shadow-[5px_5px_0px_0px] shadow-green-600 text-black uppercase cursor-pointer py-2"
+        >
           Read More
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const ProjectsSeperator = () => {
   const arrProjects = Array(25).fill("Featured Projects •");
   return (
     <div className="bg-black h-[100px] w-full relative z-8">
-      <div className="bg-green-900 h-[60px] w-[140%] rotate-5 absolute top-30 left-[-50] flex items-center justify-center">
+      <div className="bg-green-900 h-[60px] w-[140%] absolute flex items-center justify-center">
         <Marquee direction="right">
           {arrProjects.map((text, i) => (
             <h3

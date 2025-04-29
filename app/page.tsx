@@ -1,4 +1,5 @@
 // import AboutMe from "@/components/about/AboutMe";
+import AboutSection from "@/components/aboutMeHome/AboutSection";
 import Hero from "@/components/hero";
 import ProjectSection from "@/components/projectsHome/ProjectSection";
 // import ProjectsSeperator from "@/components/projectsHome/ProjectsSeperator";
@@ -13,6 +14,7 @@ export default function Home() {
     <div>
       <Hero />
       {/* <ProjectsSeperator /> */}
+      <AboutSection />
       <ProjectSection />
       {/* <AboutMe /> */}
     </div>

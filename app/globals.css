@@ -194,7 +194,7 @@ main {
   position: absolute;
   top: 0;
   left: 0;
-  fill: #60d4a4;
+  fill: var(--color-green-900);
   width: 300px;
   z-index: -1;
   animation: move 5s ease-in-out infinite;

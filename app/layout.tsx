@@ -4,6 +4,7 @@ import "./globals.css";
 import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
 // import Navbar from "@/components/navigation/navbar";
 import SmoothScroller from "@/components/ui/smoothscroller";
+// import Header from "@/components/header/header";
 
 // const rethinkSans = Rethink_Sans({
 //   variable: "--font-rethink-sans",
@@ -49,13 +50,10 @@ export default function RootLayout({
           className={`${outfit.className} ${pacifico.variable} relative antialiased`}
         >
           <AnimatedScrollbar />
-          {/* <div className="fixed z-[1000] top-[1rem] left-[50%] translate-x-[-50%]">
-            <Navbar />
+          {/* <div className="fixed z-[1000] container top-[1rem] left-[50%] translate-x-[-50%]">
+            <Header />
           </div> */}
           <main>{children}</main>
-          <div className="w-[150px] h-[300px] iphone-mockup bg-green-500">
-            DNEME
-          </div>
         </body>
       </SmoothScroller>
     </html>
