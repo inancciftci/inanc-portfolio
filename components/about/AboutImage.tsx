@@ -4,7 +4,7 @@ import React from "react";
 const AboutImage = () => {
   return (
     <div className="relative">
-      <div className="w-[250px] h-[250px] bg-[#4c9474] border-2 border-white rounded-full overflow-hidden">
+      <div className="w-[250px] h-[250px] bg-green-900 border-2 border-white rounded-full overflow-hidden">
         <Image
           className="object-cover w-full h-full translate-y-[2rem]"
           src="/cv-png.png"

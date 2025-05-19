@@ -42,7 +42,10 @@ const TransitionLink = ({
     <Link
       onClick={handleTransition}
       href={href}
-      className={`${customClass} ${isActive && " text-[#60d4a4]"}`}
+      className={`${customClass} ${
+        isActive &&
+        " text-white px-4 outline-[#3b82f6] outline-2 rounded-[30px]"
+      }`}
       {...props}
     >
       {children}

@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
-import { Rethink_Sans } from "next/font/google";
+import { Outfit, Pacifico } from "next/font/google";
 import "./globals.css";
 import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
-import Navbar from "@/components/navigation/navbar";
+// import Navbar from "@/components/navigation/navbar";
+import SmoothScroller from "@/components/ui/smoothscroller";
+// import Header from "@/components/header/header";
 
-const rethinkSans = Rethink_Sans({
-  variable: "--font-rethink-sans",
+// const rethinkSans = Rethink_Sans({
+//   variable: "--font-rethink-sans",
+//   subsets: ["latin"],
+// });
+
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "500", "300", "700", "600"],
+});
+
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
+  subsets: ["cyrillic"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -31,14 +45,17 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
-      <body className={`${rethinkSans.className} relative antialiased`}>
-        <AnimatedScrollbar />
-        <div className="z-[-2] fixed bg-gradient-to-bl from-[#4c9474]/30  to-black/50 h-screen w-full mix-blend-lighten "></div>
-        <div className="fixed z-[10] top-[1rem] left-[50%] translate-x-[-50%]">
-          <Navbar />
-        </div>
-        <main>{children}</main>
-      </body>
+      <SmoothScroller>
+        <body
+          className={`${outfit.className} ${pacifico.variable} relative antialiased`}
+        >
+          <AnimatedScrollbar />
+          {/* <div className="fixed z-[1000] container top-[1rem] left-[50%] translate-x-[-50%]">
+            <Header />
+          </div> */}
+          <main>{children}</main>
+        </body>
+      </SmoothScroller>
     </html>
   );
 }
