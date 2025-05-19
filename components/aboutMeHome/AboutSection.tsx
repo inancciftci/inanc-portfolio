@@ -36,21 +36,21 @@ const techStack = [
       "Tailwind CSS is a utility-first CSS framework that allows rapid UI development through its predefined classes. It provides a highly customizable design system without writing custom CSS.",
   },
   {
-    id: 5,
-    tech: "Java",
-    icon: "devicon-java-plain",
-    content:
-      "Java is a high-level, class-based, and object-oriented programming language. It's widely used for building enterprise-level applications, Android development, and backend services.",
-  },
-  {
-    id: 6,
-    tech: "PostgreSQL",
-    icon: "devicon-postgresql-plain",
-    content:
-      "PostgreSQL is a powerful, open-source relational database system. It offers advanced features like complex queries, data integrity, and support for both structured and unstructured data.",
-  },
-  {
     id: 7,
+    tech: "NodeJS",
+    icon: "devicon-nodejs-plain",
+    content:
+      "Node.js is a runtime environment that allows JavaScript to be run on the server side. It's lightweight, event-driven, and perfect for building scalable backend services and APIs.",
+  },
+  {
+    id: 8,
+    tech: "MongoDB",
+    icon: "devicon-mongodb-plain",
+    content:
+      "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It's great for handling large volumes of unstructured data and enables fast, scalable development.",
+  },
+  {
+    id: 9,
     tech: "Supabase",
     icon: "devicon-supabase-plain",
     content:

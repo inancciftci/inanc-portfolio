@@ -1,22 +1,15 @@
-// import AboutMe from "@/components/about/AboutMe";
-import AboutSection from "@/components/aboutMeHome/AboutSection";
-import Hero from "@/components/hero";
-import ProjectSection from "@/components/projectsHome/ProjectSection";
-// import ProjectsSeperator from "@/components/projectsHome/ProjectsSeperator";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Portfolio | Inanc Ciftci",
-};
+import AboutSection from "@/components/about-section";
+import HeroSection from "@/components/hero-section";
+import ProjectsSection from "@/components/projects-section";
+import { DockDemo } from "@/components/ui/dock";
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      {/* <ProjectsSeperator /> */}
+    <main>
+      <HeroSection />
       <AboutSection />
-      <ProjectSection />
-      {/* <AboutMe /> */}
-    </div>
+      <ProjectsSection />
+      <DockDemo />
+    </main>
   );
 }

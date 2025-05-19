@@ -22,8 +22,10 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
     <div className="grid max-md:grid-cols-1 grid-cols-[60%_1fr] items-center gap-10 relative">
       {/* Left Side */}
-      <div className="h-[500px] flex flex-col gap-10 items-center bg-gradient-to-br from-green-600/70 via-green-900/50 to-black backdrop-blur-2xl w-full overflow-hidden rounded-xl relative z-10">
-        <h3 className="pacifico-font mt-10 text-2xl z-20">{project.slogan}</h3>
+      <div className="min-h-[500px] flex flex-col gap-10 items-center bg-gradient-to-br from-green-600/30 via-green-900/100 to-white backdrop-blur-2xl w-full rounded-xl relative z-10 pb-8">
+        <h3 className="pacifico-font mt-10 text-center w-full text-2xl z-20">
+          {project.slogan}
+        </h3>
 
         {/* Project Image */}
         <div className="relative z-30">
@@ -35,27 +37,27 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
               fill
             />
           </div>
-          <div className="absolute right-[1rem] top-26 z-5">
+          <div className="absolute right-0 top-15 z-10">
             <Image
               src={"/_iphone.png"}
-              height={300}
-              width={100}
+              height={500}
+              width={150}
               alt="iPhone mockup"
             />
           </div>
-          <Image
-            src={project.image}
-            width={250}
-            height={500}
-            className="object-cover object-top absolute right-0 z-1 bottom-0"
-            alt="deneme"
-          />
+          <div className="absolute w-[144px] h-[255px] top-15 right-1">
+            <Image
+              src={"/save-mobile-2.png"}
+              fill
+              className="object-cover object-bottom rounded-3xl absolute top-8 right-0 z-5 bottom-[-50px]"
+              alt="mobile mockup"
+            />
+          </div>
+
           <div className="h-[260px] w-[430px] relative">
             <Image src={"/mockup.png"} alt={project.title} fill />
           </div>
         </div>
-
-        <div className="absolute inset-0 z-10 overflow-hidden"></div>
       </div>
 
       {/* Right Side */}
