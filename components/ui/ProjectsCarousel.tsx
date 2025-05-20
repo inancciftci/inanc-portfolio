@@ -11,9 +11,8 @@ const projects = [
     title: "Know Your Coin",
     subhead: "In Depth On-Chain Analysis",
     currentlyBuilding: true,
-    description:
-      "Know Your Coin is a blockchain analytics dashboard focused on the Solana ecosystem, built with Next.js, Tailwind CSS, ShadcnUI, and TanStack Query. It empowers users to explore token-level data by pasting a contract address, offering rich insights like top holder analysis, live price history, and daily trading volume. With real-time data from Helius and DefiLlama APIs, advanced caching, and custom visualizations, Know Your Coin delivers a smooth and insightful experience for traders, researchers, and enthusiasts alike.",
-
+    en: "Know Your Coin is a blockchain analytics dashboard focused on the Solana ecosystem, built with Next.js, Tailwind CSS, ShadcnUI, and TanStack Query. It empowers users to explore token-level data by pasting a contract address, offering rich insights like top holder analysis, live price history, and daily trading volume. With real-time data from Helius and DefiLlama APIs, advanced caching, and custom visualizations, Know Your Coin delivers a smooth and insightful experience for traders, researchers, and enthusiasts alike.",
+    tr: "Know Your Coin, Solana ekosistemine odaklanan bir blockchain analiz panelidir. Next.js, Tailwind CSS, ShadcnUI ve TanStack Query kullanılarak geliştirilmiştir. Kullanıcıların bir kontrat adresi yapıştırarak token düzeyindeki verileri keşfetmelerini sağlar; en büyük sahipler analizi, anlık fiyat geçmişi ve günlük işlem hacmi gibi zengin içgörüler sunar. Helius ve DefiLlama API’lerinden alınan gerçek zamanlı verilerle, gelişmiş önbellekleme ve özel görselleştirmeler sayesinde, yatırımcılara ve meraklılara akıcı ve bilgi dolu bir deneyim sunar.",
     tools: [
       "Next.js",
       "Shadcn/UI",
@@ -32,9 +31,8 @@ const projects = [
     title: "What The Cook!",
     subhead: "AI Recipe Generator",
     onlyLink: "https://what-to-cook-alpha.vercel.app/",
-    description:
-      "What The Cook! is an AI-powered recipe app built with Next.js, Tailwind CSS (Shadcn/UI), TanStack Query, and Supabase. It leverages OpenAI’s GPT-4 and DALL·E to generate personalized or random recipes—complete with allergy filters, nutrition facts, and beautiful food imagery—while React Query caching and serverless API routes ensure a fast, freemium cooking experience.",
-
+    en: "What The Cook! is an AI-powered recipe app built with Next.js, Tailwind CSS (Shadcn/UI), TanStack Query, and Supabase. It leverages OpenAI’s GPT-4 and DALL·E to generate personalized or random recipes—complete with allergy filters, nutrition facts, and beautiful food imagery—while React Query caching and serverless API routes ensure a fast, freemium cooking experience.",
+    tr: "What The Cook!, yapay zeka destekli bir tarif uygulamasıdır. Next.js, Tailwind CSS (Shadcn/UI), TanStack Query ve Supabase ile geliştirilmiştir. OpenAI’nin GPT-4’ü ve DALL·E’sinden yararlanarak kişiye özel ya da rastgele tarifler üretir; alerji filtreleri, besin değerleri ve göz alıcı yemek görselleri sunar. React Query önbellekleme ve sunucusuz API route’ları sayesinde hızlı ve ücretsiz bir yemek deneyimi sağlar.",
     tools: [
       "Next.js",
       "Shadcn/UI",
@@ -59,6 +57,8 @@ const projects = [
       "https://savemore.vercel.app/",
       "https://github.com/inancciftci/savemore",
     ],
+    en: "SaveMore is a personal finance tracker app built with Next.js, Supabase, Tailwind CSS, and ShadcnUI. It allows users to manage budgets, track income and expenses, and visualize their financial habits. With features like real-time data sync, secure authentication, and an intuitive dashboard, SaveMore helps users make informed financial decisions and stay on top of their goals.",
+    tr: "SaveMore, kişisel finans takibi için geliştirilmiş bir uygulamadır. Next.js, Supabase, Tailwind CSS ve ShadcnUI kullanılarak inşa edilmiştir. Kullanıcıların bütçe oluşturmasına, gelir-gider takibi yapmasına ve finansal alışkanlıklarını görselleştirmesine olanak tanır. Gerçek zamanlı veri senkronizasyonu, güvenli kimlik doğrulama ve kullanıcı dostu arayüzü ile bilinçli finansal kararlar almayı kolaylaştırır.",
     tools: [
       "Next.js",
       "Tailwind CSS",
@@ -68,8 +68,6 @@ const projects = [
       "API Routes",
       "Next.js SSR",
     ],
-    description:
-      "SaveMore is a personal finance tracker app built with Next.js, Supabase, Tailwind CSS, and ShadcnUI. It allows users to manage budgets, track income and expenses, and visualize their financial habits. With features like real-time data sync, secure authentication, and an intuitive dashboard, SaveMore helps users make informed financial decisions and stay on top of their goals.",
   },
   {
     id: 3,
@@ -81,6 +79,8 @@ const projects = [
       "https://flow-blog-weld.vercel.app/",
       "https://github.com/inancciftci/flow-blog",
     ],
+    en: "Flow Blog is a dynamic, full-stack blogging platform built with Next.js, Supabase, Tailwind CSS and ShadcnUI. It features robust authentication, a rich text editor, dynamic content fetching, and seamless integration with Supabase's real-time database. Designed with a clean and modern UI, Flow Blog offers an intuitive experience for both content creators and readers.",
+    tr: "Flow Blog, dinamik ve tam donanımlı bir blog platformudur. Next.js, Supabase, Tailwind CSS ve ShadcnUI ile geliştirilmiştir. Güçlü bir kimlik doğrulama sistemi, zengin metin düzenleyici, dinamik içerik çekme ve Supabase’in gerçek zamanlı veritabanıyla kusursuz entegrasyon sunar. Temiz ve modern arayüzüyle içerik üreticilere ve okuyuculara sezgisel bir deneyim sağlar.",
     tools: [
       "Next.js",
       "Tailwind CSS",
@@ -91,8 +91,6 @@ const projects = [
       "Next.js SSR",
       "NextAuth",
     ],
-    description:
-      "Flow Blog is a dynamic, full-stack blogging platform built with Next.js, Supabase, Tailwind CSS and ShadcnUI. It features robust authentication, a rich text editor, dynamic content fetching, and seamless integration with Supabase's real-time database. Designed with a clean and modern UI, Flow Blog offers an intuitive experience for both content creators and readers.",
   },
   {
     id: 4,
@@ -113,8 +111,8 @@ const projects = [
       "https://e-commerce-project-8pjb.vercel.app/",
       "https://github.com/inancciftci/eCommerceProject",
     ],
-    description:
-      "A full-featured e-commerce website with product listings, dynamic filtering, and a responsive layout. Built using React, Redux, Axios, Vite and Tailwind CSS for a smooth shopping experience.",
+    en: "A full-featured e-commerce website with product listings, dynamic filtering, and a responsive layout. Built using React, Redux, Axios, Vite and Tailwind CSS for a smooth shopping experience.",
+    tr: "Ürün listeleme, dinamik filtreleme ve duyarlı tasarıma sahip tam özellikli bir e-ticaret sitesi. React, Redux, Axios, Vite ve Tailwind CSS kullanılarak geliştirildi; kullanıcıya akıcı bir alışveriş deneyimi sunar.",
   },
 ];
 

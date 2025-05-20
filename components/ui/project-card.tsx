@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 import Link from "next/link";
 import { Github, Link2 } from "lucide-react";
+import { LanguageContext } from "@/app/context/LangContext";
 
 interface ProjectI {
   id: number;
@@ -10,7 +11,8 @@ interface ProjectI {
   video: string;
   title: string;
   subhead: string;
-  description: string;
+  en: string;
+  tr: string;
   tools?: string[];
   currentlyBuilding?: boolean;
   links?: string[];
@@ -19,6 +21,7 @@ interface ProjectI {
 
 const Card = ({ project }: { project: ProjectI }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { lang } = useContext(LanguageContext);
 
   return (
     <div
@@ -94,7 +97,7 @@ const Card = ({ project }: { project: ProjectI }) => {
             {project.subhead}
           </h4>
         </div>
-        <p className="text-zinc-600">{project.description}</p>
+        <p className="text-zinc-600">{project[lang]}</p>
       </div>
       <div className="flex flex-wrap gap-2 px-4 pb-4">
         {project.tools?.map((tool, index) => (
