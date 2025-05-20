@@ -33,7 +33,7 @@ const projects = [
     subhead: "AI Recipe Generator",
     onlyLink: "https://what-to-cook-alpha.vercel.app/",
     description:
-      "Know Your Coin is a blockchain analytics dashboard focused on the Solana ecosystem, built with Next.js, Tailwind CSS, ShadcnUI, and TanStack Query. It empowers users to explore token-level data by pasting a contract address, offering rich insights like top holder analysis, live price history, and daily trading volume. With real-time data from Helius and DefiLlama APIs, advanced caching, and custom visualizations, Know Your Coin delivers a smooth and insightful experience for traders, researchers, and enthusiasts alike.",
+      "What The Cook! is an AI-powered recipe app built with Next.js, Tailwind CSS (Shadcn/UI), TanStack Query, and Supabase. It leverages OpenAI’s GPT-4 and DALL·E to generate personalized or random recipes—complete with allergy filters, nutrition facts, and beautiful food imagery—while React Query caching and serverless API routes ensure a fast, freemium cooking experience.",
 
     tools: [
       "Next.js",

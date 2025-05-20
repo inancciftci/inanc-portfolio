@@ -89,7 +89,7 @@ const Card = ({ project }: { project: ProjectI }) => {
             </div>
           )}
 
-          <h3 className="text-2xl font-bold uppercase">{project.title}</h3>
+          <h3 className="text-2xl font-bold">{project.title}</h3>
           <h4 className="text-md uppercase font-[300] text-zinc-400">
             {project.subhead}
           </h4>
