@@ -26,6 +26,30 @@ const projects = [
     ],
   },
   {
+    id: 10,
+    poster: "/posters/know-your-coin.png",
+    video: "/videos/what-the-cook.mp4",
+    title: "What The Cook!",
+    subhead: "AI Recipe Generator",
+    onlyLink: "https://what-to-cook-alpha.vercel.app/",
+    description:
+      "Know Your Coin is a blockchain analytics dashboard focused on the Solana ecosystem, built with Next.js, Tailwind CSS, ShadcnUI, and TanStack Query. It empowers users to explore token-level data by pasting a contract address, offering rich insights like top holder analysis, live price history, and daily trading volume. With real-time data from Helius and DefiLlama APIs, advanced caching, and custom visualizations, Know Your Coin delivers a smooth and insightful experience for traders, researchers, and enthusiasts alike.",
+
+    tools: [
+      "Next.js",
+      "Shadcn/UI",
+      "Tailwind CSS",
+      "OpenAI API",
+      "Unsplash API",
+      "TypeScript",
+      "Supabase",
+      "Vercel AI SDK",
+      "Tanstack Query",
+      "API Routes",
+      "Next.js SSR",
+    ],
+  },
+  {
     id: 2,
     poster: "/posters/save-more.png",
     video: "/videos/save-more.mp4",
