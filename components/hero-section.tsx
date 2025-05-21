@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LanguageContext } from "@/app/context/LangContext";
 import { content } from "@/lib/content";
-import LangToggle from "./ui/LangToggle";
+import { DockDemo } from "./ui/dock";
 
 const iconSlugs = [
   "typescript",
@@ -54,6 +54,7 @@ const HeroSection = () => {
               {localized.button}
             </InteractiveHoverButton>
           </Link>
+          <DockDemo />
         </div>
         <IconCloud images={icons} />
       </div>

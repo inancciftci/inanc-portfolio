@@ -5,6 +5,7 @@ import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
 // import Navbar from "@/components/navigation/navbar";
 import SmoothScroller from "@/components/ui/smoothscroller";
 import { LanguageProvider } from "./context/LangContext";
+import { ThemeProvider } from "@/components/theme-provider";
 // import Header from "@/components/header/header";
 
 // const rethinkSans = Rethink_Sans({
@@ -46,6 +47,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
+
       <SmoothScroller>
         <body
           className={`${outfit.className} ${pacifico.variable} relative antialiased`}
@@ -55,7 +57,9 @@ export default function RootLayout({
             {/* <div className="fixed z-[1000] container top-[1rem] left-[50%] translate-x-[-50%]">
             <Header />
           </div> */}
-            <main>{children}</main>
+            <ThemeProvider>
+              <main>{children}</main>
+            </ThemeProvider>
           </LanguageProvider>
         </body>
       </SmoothScroller>

@@ -1,4 +1,3 @@
-// src/components/LanguageSwitcher.tsx
 "use client";
 import { LanguageContext } from "@/app/context/LangContext";
 import { useContext } from "react";
@@ -7,7 +6,7 @@ export default function LangToggle() {
   const { lang, setLang } = useContext(LanguageContext);
 
   return (
-    <div className="absolute top-28 right-15">
+    <div className="">
       <select
         value={lang}
         onChange={(e) => {

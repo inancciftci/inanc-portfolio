@@ -31,7 +31,7 @@ const Card = ({ project }: { project: ProjectI }) => {
       onMouseLeave={() => {
         videoRef.current?.pause();
       }}
-      className="custom-cursor rounded-lg overflow-hidden w-[350px] bg-white shadow-lg flex flex-col gap-4"
+      className="custom-cursor rounded-lg overflow-hidden w-[350px] bg-white dark:bg-zinc-900 shadow-lg flex flex-col gap-4"
     >
       <video
         ref={videoRef}

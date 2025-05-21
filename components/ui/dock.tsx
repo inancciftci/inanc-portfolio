@@ -89,9 +89,9 @@ const DATA = {
 
 export function DockDemo() {
   return (
-    <div className="flex flex-col items-center justify-center absolute top-2 right-5">
+    <div className="flex flex-col items-center justify-center absolute top-10 right-13">
       <TooltipProvider>
-        <Dock className="bg-white" direction="middle">
+        <Dock className="bg-white dark:bg-zinc-900 flex" direction="middle">
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
