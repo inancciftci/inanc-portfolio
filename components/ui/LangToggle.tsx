@@ -7,7 +7,7 @@ export default function LangToggle() {
   const { lang, setLang } = useContext(LanguageContext);
 
   return (
-    <div className="absolute top-26 right-15">
+    <div className="absolute top-28 right-15">
       <select
         value={lang}
         onChange={(e) => {

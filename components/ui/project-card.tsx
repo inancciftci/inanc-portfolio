@@ -31,11 +31,11 @@ const Card = ({ project }: { project: ProjectI }) => {
       onMouseLeave={() => {
         videoRef.current?.pause();
       }}
-      className="rounded-lg overflow-hidden w-[400px] bg-white shadow-lg flex flex-col gap-4"
+      className="custom-cursor rounded-lg overflow-hidden w-[350px] bg-white shadow-lg flex flex-col gap-4"
     >
       <video
         ref={videoRef}
-        className="w-full h-[340px] object-cover border-b-1 border-zinc-200"
+        className="w-full h-[280px] object-cover border-b-1 border-zinc-200"
         width="420"
         height="340"
         muted
@@ -45,10 +45,10 @@ const Card = ({ project }: { project: ProjectI }) => {
       >
         <source src={project.video} type="video/mp4" />
       </video>
-      <div className="px-4 pb-4 min-h-[370px] flex flex-col gap-6">
+      <div className="px-4 pb-4 min-h-[300px] flex flex-col gap-6">
         <div className="flex flex-col gap-1 relative">
           {project.currentlyBuilding && (
-            <AnimatedShinyText className="absolute top-[3px] right-0 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <AnimatedShinyText className="absolute top-[3px] -right-4 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
               <span className="text-sm flex items-center gap-2">
                 <div className="w-1 h-1 bg-amber-600 animate-ping rounded-full"></div>
                 Currently Building
@@ -57,7 +57,7 @@ const Card = ({ project }: { project: ProjectI }) => {
           )}
 
           {project.onlyLink && (
-            <AnimatedShinyText className="absolute top-[3px] right-0 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <AnimatedShinyText className="absolute top-[3px] -right-4 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
               <div className="flex flex-col gap-2 items-end">
                 <span className="text-sm flex items-center gap-2">
                   <div className="w-1 h-1 bg-amber-600 animate-ping rounded-full"></div>
@@ -81,23 +81,23 @@ const Card = ({ project }: { project: ProjectI }) => {
                 className="flex bg-primary text-white px-2 py-1 rounded-lg gap-1 items-center text-sm mr-2"
                 href={project.links[0]}
               >
-                <Link2 size={15} /> <span>Live</span>
+                <Link2 size={13} /> <span>Live</span>
               </Link>
               <Link
                 className="flex bg-primary text-white px-2 py-1 rounded-lg gap-1 items-center text-sm"
                 href={project.links[1]}
               >
-                <Github size={15} /> <span>Github</span>
+                <Github size={13} /> <span>Github</span>
               </Link>
             </div>
           )}
 
           <h3 className="text-2xl font-bold">{project.title}</h3>
-          <h4 className="text-md uppercase font-[300] text-zinc-400">
+          <h4 className="text-sm uppercase font-[300] text-zinc-500">
             {project.subhead}
           </h4>
         </div>
-        <p className="text-zinc-600">{project[lang]}</p>
+        <p className="text-zinc-600 text-sm">{project[lang]}</p>
       </div>
       <div className="flex flex-wrap gap-2 px-4 pb-4">
         {project.tools?.map((tool, index) => (

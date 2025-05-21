@@ -170,6 +170,15 @@
   }
 }
 
+.custom-cursor {
+  cursor: url("/youtube-cursor.png") 12 12, auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-cursor:hover {
+  transform: scale(1.05);
+}
+
 @layer utilities {
   .container {
     @apply max-w-[960px] px-10 py-4 mx-auto;

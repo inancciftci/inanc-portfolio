@@ -89,8 +89,7 @@ const DATA = {
 
 export function DockDemo() {
   return (
-    <div className="flex flex-col items-center justify-center absolute top-5 right-5">
-      <span className="-mb-8 uppercase font-bold">Contact</span>
+    <div className="flex flex-col items-center justify-center absolute top-2 right-5">
       <TooltipProvider>
         <Dock className="bg-white" direction="middle">
           {Object.entries(DATA.contact.social).map(([name, social]) => (
