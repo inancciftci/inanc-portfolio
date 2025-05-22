@@ -73,7 +73,7 @@ body {
   margin-bottom: 30px;
 }
 .main header h2 {
-  font-size: 16px;
+  font-size: 18px;
   color: #34495e;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -127,4 +127,32 @@ body {
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
+}
+
+html.dark body {
+  background-color: rgb(30, 30, 30);
+  color: #e0e0e0;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark p,
+html.dark li,
+html.dark span {
+  color: #e0e0e0;
+}
+html.dark a {
+  color: #90caf9;
+}
+html.dark .links i {
+  color: #e0e0e0;
+}
+html.dark .period {
+  color: #aaa;
+}
+html.dark .skill {
+  background-color: black;
+  color: #e0e0e0;
 }

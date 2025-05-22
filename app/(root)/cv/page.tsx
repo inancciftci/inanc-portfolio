@@ -1,10 +1,11 @@
 import React from "react";
 import "./cv.css";
 import Image from "next/image";
+import Link from "next/link";
 
-const index = () => {
+const Page = () => {
   return (
-    <div className="resume">
+    <div className="resume light">
       <div className="columns">
         <aside className="sidebar">
           <div className="header flex flex-col items-center">
@@ -54,12 +55,13 @@ const index = () => {
                   className="fa-solid fa-link"
                   style={{ marginRight: "5px" }}
                 ></i>
-                <a
+                <Link
+                  className="text-white"
                   style={{ textDecoration: "underline" }}
                   href="https://github.com/inancciftci"
                 >
                   GitHub
-                </a>
+                </Link>
               </li>
             </ul>
           </section>
@@ -90,7 +92,7 @@ const index = () => {
         </aside>
         <main className="main">
           <header>
-            <h2 className="font-bold">Profile Summary</h2>
+            <h2 className="font-bold text-[18px]">Profile Summary</h2>
             <p id="changable">
               I graduated from law school but discovered my true passion lies in
               software development. After teaching myself JavaScript, HTML, and
@@ -105,11 +107,11 @@ const index = () => {
 
           <section id="changable" style={{ marginBottom: "30px" }}>
             <h3
+              className="dark:text-white"
               style={{
                 fontSize: "18px",
                 marginBottom: "12px",
                 fontWeight: "bold",
-                color: "#2c3e50",
                 textTransform: "uppercase",
                 letterSpacing: "1px",
               }}
@@ -151,7 +153,7 @@ const index = () => {
           </section>
 
           <section className="section">
-            <h3 className="font-bold">Projects</h3>
+            <h3 className="font-bold uppercase">Projects</h3>
             <div className="timeline">
               <div className="item">
                 <h4 className="font-bold" style={{ fontSize: "14px" }}>
@@ -166,7 +168,6 @@ const index = () => {
                     style={{
                       textDecoration: "underline",
                       fontSize: "13px",
-                      color: "black",
                       fontWeight: "bold",
                     }}
                   >
@@ -178,7 +179,6 @@ const index = () => {
                     style={{
                       textDecoration: "underline",
                       fontSize: "13px",
-                      color: "black",
                       fontWeight: "bold",
                     }}
                   >
@@ -220,7 +220,6 @@ const index = () => {
                     style={{
                       textDecoration: "underline",
                       fontSize: "13px",
-                      color: "black",
                       fontWeight: "bold",
                     }}
                   >
@@ -232,7 +231,6 @@ const index = () => {
                     style={{
                       textDecoration: "underline",
                       fontSize: "13px",
-                      color: "black",
                       fontWeight: "bold",
                     }}
                   >
@@ -262,7 +260,7 @@ const index = () => {
             </div>
           </section>
           <section className="section">
-            <h3 className="font-bold">Work Experience</h3>
+            <h3 className="font-bold uppercase">Work Experience</h3>
             <div className="timeline">
               <div className="item">
                 <h4>Legal Intern — Izmir Bar Association</h4>
@@ -324,4 +322,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Page;

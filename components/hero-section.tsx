@@ -49,9 +49,9 @@ const HeroSection = () => {
             />
             <p>{localized.short}</p>
           </div>
-          <Link href={"#projects"}>
+          <Link href={"/cv"}>
             <InteractiveHoverButton className="max-w-[250px] text-center">
-              {localized.button}
+              CV
             </InteractiveHoverButton>
           </Link>
           <DockDemo />
