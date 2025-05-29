@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Outfit, Pacifico } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
-import AnimatedScrollbar from "@/components/ui/animatedscrollbar";
-// import Navbar from "@/components/navigation/navbar";
-import SmoothScroller from "@/components/ui/smoothscroller";
-import { LanguageProvider } from "./context/LangContext";
-import { ThemeProvider } from "@/components/theme-provider";
-// import Header from "@/components/header/header";
+import Image from "next/image";
+import Link from "next/link";
 
 // const rethinkSans = Rethink_Sans({
 //   variable: "--font-rethink-sans",
@@ -19,18 +15,13 @@ const outfit = Outfit({
   weight: ["400", "500", "300", "700", "600"],
 });
 
-const pacifico = Pacifico({
-  variable: "--font-pacifico",
-  subsets: ["cyrillic"],
-  weight: ["400"],
-});
-
 export const metadata: Metadata = {
   title: {
     template: "%s | Inanc Ciftci",
-    default: "Welcome to my portfolio",
+    default: "Inanc Ciftci",
   },
-  description: "A portfolio resume for inanc ciftci.",
+  description:
+    "A portfolio website for Inanc Ciftci, showcasing projects and skills.",
 };
 
 export default function RootLayout({
@@ -48,21 +39,31 @@ export default function RootLayout({
         />
       </head>
 
-      <SmoothScroller>
-        <body
-          className={`${outfit.className} ${pacifico.variable} relative antialiased`}
-        >
-          <LanguageProvider>
-            <AnimatedScrollbar />
-            {/* <div className="fixed z-[1000] container top-[1rem] left-[50%] translate-x-[-50%]">
-            <Header />
-          </div> */}
-            <ThemeProvider>
-              <main>{children}</main>
-            </ThemeProvider>
-          </LanguageProvider>
-        </body>
-      </SmoothScroller>
+      <body className={`${outfit.className} font-outfit relative`}>
+        <header className="container">
+          <div className="flex flex-row-reverse items-center justify-between gap-4">
+            <Image
+              src={"/cv-img.png"}
+              width={50}
+              quality={100}
+              height={50}
+              alt="CV Photo"
+              className="rounded-full"
+            />
+            <nav className="flex gap-2 items-center uppercase text-slate-400">
+              <Link href={"/"}>Home</Link>
+              <span>|</span>
+              <Link href={"/#about"}>About</Link>
+              <span>|</span>
+              <Link href={"/#projects"}>Projects</Link>
+              <span>|</span>
+              <Link href={"/#certificates"}>Certificates</Link>
+            </nav>
+          </div>
+        </header>
+        <main>{children}</main>
+        <footer></footer>
+      </body>
     </html>
   );
 }

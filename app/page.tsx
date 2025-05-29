@@ -1,19 +1,15 @@
-import AboutSection from "@/components/about-section";
+import Certificates from "@/components/certificates";
 import HeroSection from "@/components/hero-section";
-import ProjectsSection from "@/components/projects-section";
-import LangToggle from "@/components/ui/LangToggle";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import Projects from "@/components/projects";
+import TechStack from "@/components/tech-stack";
 
 export default function Home() {
   return (
-    <main>
-      <div className="flex items-center gap-4 absolute top-0 right-10">
-        <LangToggle /> <ThemeToggle />
-      </div>
-
+    <div className="h-[1500px]">
       <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-    </main>
+      <TechStack />
+      <Projects />
+      <Certificates />
+    </div>
   );
 }

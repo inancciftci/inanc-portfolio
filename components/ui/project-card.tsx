@@ -1,116 +1,92 @@
-"use client";
-import React, { useContext, useRef } from "react";
-import { AnimatedShinyText } from "../magicui/animated-shiny-text";
+import { Github, Globe, Link2, MoveRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { Github, Link2 } from "lucide-react";
-import { LanguageContext } from "@/app/context/LangContext";
+import React from "react";
+import { AnimatedShinyText } from "../magicui/animated-shiny-text";
 
-interface ProjectI {
+interface Project {
   id: number;
   poster: string;
   video: string;
   title: string;
+  slug: string;
   subhead: string;
-  en: string;
-  tr: string;
-  tools?: string[];
   currentlyBuilding?: boolean;
+  github?: string;
+  demo?: string;
+  en: string;
+  tr?: string;
+  tools: string[];
   links?: string[];
   onlyLink?: string;
+  description: string;
 }
 
-const Card = ({ project }: { project: ProjectI }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const { lang } = useContext(LanguageContext);
-
+const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div
-      onMouseEnter={() => {
-        videoRef.current?.play();
-      }}
-      onMouseLeave={() => {
-        videoRef.current?.pause();
-      }}
-      className="custom-cursor rounded-lg overflow-hidden w-[350px] bg-white dark:bg-zinc-900 shadow-lg flex flex-col gap-4"
-    >
-      <video
-        ref={videoRef}
-        className="w-full h-[280px] object-cover border-b-1 border-zinc-200"
-        width="420"
-        height="340"
-        muted
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src={project.video} type="video/mp4" />
-      </video>
-      <div className="px-4 pb-4 min-h-[300px] flex flex-col gap-6">
-        <div className="flex flex-col gap-1 relative">
-          {project.currentlyBuilding && (
-            <AnimatedShinyText className="absolute top-[3px] -right-4 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <span className="text-sm flex items-center gap-2">
-                <div className="w-1 h-1 bg-amber-600 animate-ping rounded-full"></div>
-                Currently Building
-              </span>
-            </AnimatedShinyText>
-          )}
-
-          {project.onlyLink && (
-            <AnimatedShinyText className="absolute top-[3px] -right-4 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <div className="flex flex-col gap-2 items-end">
-                <span className="text-sm flex items-center gap-2">
-                  <div className="w-1 h-1 bg-amber-600 animate-ping rounded-full"></div>
-                  Currently Building
-                </span>
-                <Link
-                  className="text-primary font-bold flex items-center gap-2 text-sm underline"
-                  href={project.onlyLink}
-                  target="_blank"
-                >
-                  <Link2 size={15} />
-                  Demo
-                </Link>
-              </div>
-            </AnimatedShinyText>
-          )}
-
-          {project.links && (
-            <div className="absolute top-[-1px] -right-3 rounded-lg inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-              <Link
-                className="flex bg-primary text-white px-2 py-1 rounded-lg gap-1 items-center text-sm mr-2"
-                href={project.links[0]}
-              >
-                <Link2 size={13} /> <span>Live</span>
-              </Link>
-              <Link
-                className="flex bg-primary text-white px-2 py-1 rounded-lg gap-1 items-center text-sm"
-                href={project.links[1]}
-              >
-                <Github size={13} /> <span>Github</span>
-              </Link>
-            </div>
-          )}
-
-          <h3 className="text-2xl font-bold">{project.title}</h3>
-          <h4 className="text-sm uppercase font-[300] text-zinc-500">
-            {project.subhead}
-          </h4>
-        </div>
-        <p className="text-zinc-600 text-sm">{project[lang]}</p>
+    <div className="hover:bg-slate-300 group flex flex-col p-4 gap-2 rounded-lg duration-300 relative">
+      <div className="w-[100px] h-[100px] z-3 relative rounded-full overflow-hiddern">
+        <Image
+          src={project.poster}
+          fill
+          alt={project.title}
+          className="rounded-full object-cover"
+        />
       </div>
-      <div className="flex flex-wrap gap-2 px-4 pb-4">
-        {project.tools?.map((tool, index) => (
-          <span
-            key={index}
-            className="bg-primary px-2 py-1 rounded-lg text-white text-[12px]"
+      <Link
+        href={`/project/${project.slug}`}
+        className="opacity-0 group-hover:opacity-100 absolute top-[52px] z-2 group-hover:translate-x-[120px] bg-primary px-2 py-1.5 pr-4 rounded-lg font-bold text-slate-800 flex duration-500 items-center gap-2"
+      >
+        <MoveRight size={15} />
+        <span>Details</span>
+      </Link>
+      <h3 className="text-lg font-bold">{project.title}</h3>
+
+      {project.currentlyBuilding ? (
+        <div className="flex items-center gap-4 h-[30px]">
+          <AnimatedShinyText className="rounded-lg">
+            <span className="text-sm flex items-center gap-2">
+              <div className="w-1 h-1 bg-amber-600 animate-ping rounded-full"></div>
+              Currently Building
+            </span>
+          </AnimatedShinyText>
+          {project.onlyLink && (
+            <Link
+              className="text-sm flex items-center gap-1 bg-slate-500 text-white px-2 rounded-lg py-1"
+              href={project.onlyLink}
+            >
+              <Link2 size={15} /> <span>Demo</span>
+            </Link>
+          )}
+        </div>
+      ) : (
+        <div className="flex gap-2 items-center">
+          <Link
+            className="bg-slate-100 p-1 rounded-full"
+            href={project.github || ""}
           >
-            {tool}
-          </span>
+            <Github size={20} />
+          </Link>
+          <Link
+            className="bg-slate-100 p-1 rounded-full"
+            href={project.demo || ""}
+          >
+            <Globe size={20} />
+          </Link>
+        </div>
+      )}
+
+      <p className="uppercase text-sm font-thin text-slate-500">
+        {project.subhead}
+      </p>
+      <p className="text-sm">{project.description}</p>
+      <div className="inline-flex flex-wrap gap-4 items-center">
+        {project.tools.map((t) => (
+          <i className={t + " text-slate-700 text-xl rounded-full"} key={t} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Card;
+export default ProjectCard;
